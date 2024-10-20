@@ -1,0 +1,69 @@
+                                                                              
+
+  /mount/src/movie_query/app.py:5 in <module>                                   
+
+                                                                                
+
+     2 from dotenv import load_dotenv                                           
+
+     3                                                                          
+
+     4 import streamlit as st                                                   
+
+  ❱  5 from src.movie_insights import set_up_components, run_movie_insights     
+
+     6                                                                          
+
+     7 # Load API KEY from .env file                                            
+
+     8 load_dotenv()                                                            
+
+                                                                                
+
+  /mount/src/movie_query/src/movie_insights.py:2 in <module>                    
+
+                                                                                
+
+     1 import os                                                                
+
+  ❱  2 import chromadb                                                          
+
+     3 from chromadb.utils import embedding_functions                           
+
+     4 from langchain_core.prompts import ChatPromptTemplate                    
+
+     5 from langchain_openai import ChatOpenAI                                  
+
+                                                                                
+
+  /home/adminuser/venv/lib/python3.12/site-packages/chromadb/__init__.py:86 in  
+
+  <module>                                                                      
+
+                                                                                
+
+     83 │   │   │   __import__("pysqlite3")                                     
+
+     84 │   │   │   sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")       
+
+     85 │   │   else:                                                           
+
+  ❱  86 │   │   │   raise RuntimeError(                                         
+
+     87 │   │   │   │   "\033[91mYour system has an unsupported version of sql  
+
+     88 │   │   │   │   │   requires sqlite3 >= 3.35.0.\033[0m\n"               
+
+     89 │   │   │   │   "\033[94mPlease visit \                                 
+
+────────────────────────────────────────────────────────────────────────────────
+
+RuntimeError: [91mYour system has an unsupported version of sqlite3. Chroma    
+
+requires sqlite3 >= 3.35.0.[0m
+
+[94mPlease visit                     
+
+https://docs.trychroma.com/troubleshooting#sqlite to learn how                  
+
+to upgrade.[0m
