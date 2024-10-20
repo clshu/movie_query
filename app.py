@@ -7,6 +7,8 @@ from src.movie_insights import set_up_components, run_movie_insights
 # Load API KEY from .env file
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 st.title("Movie Query App")
 
